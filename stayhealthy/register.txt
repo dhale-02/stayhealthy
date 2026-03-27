@@ -1,0 +1,10 @@
+COMMAND:
+curl -X POST https://stayhealthy-api.us-east.lb.appdomain.cloud/api/v1/user/register \
+-H "Content-Type: application/json" \
+-d '{"role":"patient","name":"Test User","email":"test12345@example.com","phone":"1234567890","password":"SecurePassword123!"}'
+
+OUTPUT:
+{
+  "status": true,
+  "message": "User registered successfully"
+}
