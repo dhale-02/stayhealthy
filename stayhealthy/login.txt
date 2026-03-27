@@ -1,0 +1,12 @@
+COMMAND:
+curl -X POST https://stayhealthy-api.us-east.lb.appdomain.cloud/api/v1/user/login \
+-H "Content-Type: application/json" \
+-d '{"email":"test12345@example.com","password":"SecurePassword123!"}'
+
+OUTPUT:
+{
+  "status": true,
+  "message": "Login successful",
+  "authtoken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "email": "test12345@example.com"
+}
