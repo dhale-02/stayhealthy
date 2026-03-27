@@ -1,27 +1,20 @@
-import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate();
-
-  // Check if the user is logged in when the component loads
-  useEffect(() => {
+  // We initialize the state by checking sessionStorage instantly.
+  // This completely removes the need for useEffect and makes React happy!
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
     const token = sessionStorage.getItem('auth-token');
     const email = sessionStorage.getItem('email');
-    
-    if (token || email) {
-      setIsLoggedIn(true);
-    }
-  }, []);
+    return !!(token || email); // Returns true if either exists, false if empty
+  });
 
-  // Handle the logout process
   const handleLogout = () => {
     sessionStorage.clear(); // Clear the saved auth data
     setIsLoggedIn(false);
-    navigate('/'); // Send them back to the home page
-    window.location.reload(); // Refresh to ensure the state is fully cleared
+    window.location.href = '/'; // Forces navigation back to home AND reloads the state
   };
 
   return (
@@ -33,15 +26,12 @@ function Navbar() {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/appointments">Appointments</Link></li>
         
-        {/* Conditionally render buttons based on login status */}
         {isLoggedIn ? (
-          <>
-            <li>
-              <button onClick={handleLogout} className="btn btn-login" style={{ cursor: 'pointer', fontFamily: 'inherit', fontSize: '1rem' }}>
-                Logout
-              </button>
-            </li>
-          </>
+          <li>
+            <button onClick={handleLogout} className="btn btn-login" style={{ cursor: 'pointer', fontFamily: 'inherit', fontSize: '1rem' }}>
+              Logout
+            </button>
+          </li>
         ) : (
           <>
             <li><Link to="/login" className="btn btn-login">Login</Link></li>
