@@ -1,0 +1,75 @@
+.appointment-ic-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.appointment-ic-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  border-top: 4px solid #0a74da;
+}
+
+.appointment-ic-card h2 {
+  color: #0a74da;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+.appointment-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+/* We can reuse the form-group styles from the other forms, 
+   but they are included here natively just in case */
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-group input {
+  padding: 10px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #0a74da;
+}
+
+.book-btn-ic {
+  width: 100%;
+  padding: 12px;
+  background-color: #0a74da;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.book-btn-ic:hover {
+  background-color: #005bb5;
+}
