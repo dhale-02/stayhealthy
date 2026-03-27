@@ -1,46 +1,38 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import { useState, useEffect } from 'react';
+import './Notification.css';
 
-function Navbar() {
-  // We initialize the state by checking sessionStorage instantly.
-  // This completely removes the need for useEffect and makes React happy!
-  const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    const token = sessionStorage.getItem('auth-token');
-    const email = sessionStorage.getItem('email');
-    return !!(token || email); // Returns true if either exists, false if empty
+function Notification() {
+  // 1. Initialize message state instantly
+  const [message] = useState(() => {
+    const userEmail = sessionStorage.getItem('email');
+    return userEmail ? `Welcome back, ${userEmail}!` : '';
   });
 
-  const handleLogout = () => {
-    sessionStorage.clear(); // Clear the saved auth data
-    setIsLoggedIn(false);
-    window.location.href = '/'; // Forces navigation back to home AND reloads the state
-  };
+  // 2. Initialize show state instantly
+  const [show, setShow] = useState(() => {
+    const userEmail = sessionStorage.getItem('email');
+    return !!userEmail; // Returns true if email exists, false if not
+  });
+
+  // 3. Only use useEffect for the 5-second timer side-effect
+  useEffect(() => {
+    if (show) {
+      const timer = setTimeout(() => {
+        setShow(false); // This is asynchronous, so the linter won't complain!
+      }, 5000);
+      
+      return () => clearTimeout(timer); // Cleanup timer if component unmounts
+    }
+  }, [show]);
+
+  if (!show) return null;
 
   return (
-    <nav className="navbar">
-      <div className="navbar-brand">
-        <Link to="/">🏥 StayHealthy</Link>
-      </div>
-      <ul className="navbar-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/appointments">Appointments</Link></li>
-        
-        {isLoggedIn ? (
-          <li>
-            <button onClick={handleLogout} className="btn btn-login" style={{ cursor: 'pointer', fontFamily: 'inherit', fontSize: '1rem' }}>
-              Logout
-            </button>
-          </li>
-        ) : (
-          <>
-            <li><Link to="/login" className="btn btn-login">Login</Link></li>
-            <li><Link to="/signup" className="btn btn-signup">Sign Up</Link></li>
-          </>
-        )}
-      </ul>
-    </nav>
+    <div className="notification-banner">
+      <p>🔔 {message}</p>
+      <button className="close-btn" onClick={() => setShow(false)}>×</button>
+    </div>
   );
 }
 
-export default Navbar;
+export default Notification;
