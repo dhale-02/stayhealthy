@@ -1,0 +1,14 @@
+~/VS CODE/stayhealthy/stayhealthy main* ⇡
+❯ npm run build
+
+> stayhealthy@0.0.0 build
+> vite build
+
+vite v8.0.3 building client environment for production...
+✓ 85 modules transformed.
+computing gzip size...
+dist/index.html                   0.46 kB │ gzip:  0.29 kB
+dist/assets/index-CW-PkLhM.css    6.75 kB │ gzip:  1.93 kB
+dist/assets/index-By2rB7XW.js   274.81 kB │ gzip: 89.65 kB
+
+✓ built in 380ms
