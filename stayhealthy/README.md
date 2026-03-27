@@ -1,4 +1,4 @@
-# StayHealthy 🏥
+# Medical Appointment Booking
 
 A front-end web application for a fictitious non-profit healthcare platform aimed at improving access to medical services in remote and underserved areas.
 
