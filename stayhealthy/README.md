@@ -1,16 +1,78 @@
-# React + Vite
+# StayHealthy 🏥
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A front-end web application for a fictitious non-profit healthcare platform aimed at improving access to medical services in remote and underserved areas.
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+StayHealthy is part of a **Go Digital** initiative that helps patients connect with doctors anytime and from anywhere through a web-based solution. The platform provides features such as appointment booking, doctor search, patient profiles, and reviews.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React.js** (Vite)
+- **React Router DOM** - Navigation
+- **Axios** - API calls
+- **HTML5 & CSS3**
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- User Registration (Sign Up)
+- User Authentication (Login / Logout)
+- Appointment Booking
+- Doctor Search
+- Patient Profile Management
+- Give Reviews
+- Notifications
+
+## Setup Instructions
+
+### Prerequisites
+
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- npm (comes with Node.js)
+- Git
+
+### Installation
+
+1. **Clone the repository:**
+```bash
+   git clone https://github.com/dhale-02/stayhealthy.git
+```
+
+2. **Navigate into the project folder:**
+```bash
+   cd stayhealthy
+```
+
+3. **Install dependencies:**
+```bash
+   npm install
+```
+
+4. **Start the development server:**
+```bash
+   npm run dev
+```
+
+5. **Open your browser and visit:**
+```
+   http://localhost:5173
+```
+
+### Production Build
+
+To create a production build:
+```bash
+npm run build
+```
+
+The build output will be in the `dist/` folder.
+
+## Deployment
+
+This project is deployed and accessible at:
+> 🔗 [StayHealthy Live](https://stayhealthy.netlify.app)
+
+## License
+
+This project is for educational purposes as part of the IBM Full Stack Development Capstone Project.
