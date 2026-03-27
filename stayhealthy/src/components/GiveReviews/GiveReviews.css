@@ -1,0 +1,75 @@
+.review-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f0f7ff;
+  min-height: calc(100vh - 60px);
+}
+
+.review-card {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  border-top: 4px solid #0a74da;
+}
+
+.review-card h2 {
+  color: #0a74da;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.review-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+.form-group textarea {
+  padding: 10px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+.form-group textarea:focus {
+  border-color: #0a74da;
+}
+
+/* Grays out inputs when disabled */
+input:disabled, select:disabled, textarea:disabled {
+  background-color: #f5f5f5;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.review-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0a74da;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.review-btn:hover:not(:disabled) {
+  background-color: #005bb5;
+}
+
+.disabled-btn {
+  background-color: #cccccc !important;
+  color: #666 !important;
+  cursor: not-allowed !important;
+}
