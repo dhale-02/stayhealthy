@@ -91,3 +91,22 @@
 .login-link a:hover {
   text-decoration: underline;
 }
+.alert {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.alert-error {
+  background-color: #ffe0e0;
+  color: #cc0000;
+  border: 1px solid #ffaaaa;
+}
+
+.alert-success {
+  background-color: #e0ffe0;
+  color: #007700;
+  border: 1px solid #aaffaa;
+}
